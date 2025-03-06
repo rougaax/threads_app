@@ -22,13 +22,17 @@ class TabItemWidget extends StatelessWidget {
       onTap: () => onTap(index),
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 12),
+        decoration: BoxDecoration(
+          borderRadius: isLeft
+              ? const BorderRadius.only(topLeft: Radius.circular(24))
+              : const BorderRadius.only(topRight: Radius.circular(24)),
+        ),
         alignment: Alignment.center,
         child: Text(
           title,
           style: TextStyle(
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
             color: selectedTab == index ? Colors.white : Colors.grey,
+            fontWeight: FontWeight.bold,
           ),
         ),
       ),

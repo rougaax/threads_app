@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'screens/home_screen.dart';
 import 'screens/search_screen.dart';
 import 'screens/add_thread_screen.dart';
@@ -14,7 +15,7 @@ class ThreadsCloneApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData.dark().copyWith(
         scaffoldBackgroundColor: Colors.black,
@@ -35,10 +36,10 @@ class MainScreenState extends State<MainScreen> {
   int _selectedIndex = 0;
   final List<Widget> _screens = [
     const HomeScreen(),
-    const SearchScreen(),
+    SearchScreen(),
     const AddThreadScreen(),
-    const ActivityScreen(),
-    const ProfileScreen(),
+    ActivityScreen(),
+    ProfileScreen(),
   ];
 
   void _onItemTapped(int index) {

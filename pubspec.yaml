@@ -36,6 +36,7 @@ dependencies:
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.8
   flutter_svg: ^2.0.7
+  get: ^4.7.2
 
 
 dev_dependencies:
@@ -56,6 +57,13 @@ dev_dependencies:
 flutter:
   assets:
     - assets/search_assets/
+    - assets/add_poll.svg
+    - assets/attach.svg
+    - assets/dot.svg
+    - assets/draft.svg
+    - assets/gif.svg
+    - assets/hashtag.svg
+    - assets/location.svg
     - assets/threads_logo.svg
     - assets/heart.svg
     - assets/message.svg
@@ -63,7 +71,12 @@ flutter:
     - assets/red_heart.svg
     - assets/send.svg
     - assets/verified.svg
-
+    - assets/instagram.svg
+    - assets/public.svg
+    - assets/insights.svg
+    - assets/followers.svg
+    - assets/camera.svg
+    - assets/mic.svg
 
 
 

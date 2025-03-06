@@ -1,32 +1,39 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import '../controllers/add_thread_controller.dart';
 import '../widgets/user_post_widget.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
 class AddThreadScreen extends StatelessWidget {
   const AddThreadScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final AddThreadController controller = Get.put(AddThreadController());
+
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.close),
           onPressed: () {
-            Navigator.of(context).pop();
+            if (Navigator.of(context).canPop()) {
+              print("Navigator bisa pop, kembali ke halaman sebelumnya.");
+              Navigator.of(context).pop();
+            } else {
+              print("Navigator tidak bisa pop, coba Get.back().");
+              Get.back();
+            }
           },
         ),
         title: const Text('New thread'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.drafts),
-            onPressed: () {
-              // Handle draft action
-            },
+            icon: SvgPicture.asset("assets/draft.svg", height: 32),
+            onPressed: () {},
           ),
           IconButton(
-            icon: const Icon(Icons.more_horiz),
-            onPressed: () {
-              // Handle more options action
-            },
+            icon: SvgPicture.asset("assets/dot.svg", height: 32),
+            onPressed: () {},
           ),
         ],
         backgroundColor: Colors.black,
@@ -38,15 +45,16 @@ class AddThreadScreen extends StatelessWidget {
               UserPostWidget(
                 username: "alvianrfs",
                 placeholder: "What's new?",
-                profileImageUrl: "https://images.unsplash.com/photo-1690790412691-aa9714b39cbb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                profileImageUrl:
+                    "https://images.unsplash.com/photo-1690790412691-aa9714b39cbb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 icons: const [
-                  Icons.photo_library_outlined,
-                  Icons.photo_camera_outlined,
-                  Icons.gif_box_outlined,
-                  Icons.mic_none_outlined,
-                  Icons.tag_outlined,
-                  Icons.menu,
-                  Icons.location_on_outlined,
+                  "assets/attach.svg",
+                  "assets/location.svg",
+                  "assets/gif.svg",
+                  "assets/location.svg",
+                  "assets/hashtag.svg",
+                  "assets/add_poll.svg",
+                  "assets/location.svg",
                 ],
               ),
             ],
@@ -62,18 +70,29 @@ class AddThreadScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.grey[600]),
                 ),
                 const Spacer(),
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.grey[600],
-                    borderRadius: BorderRadius.circular(30),
-                  ),
-                  child: TextButton(
-                    onPressed: () {
-                      // Post the thread
-                    },
-                    child: const Text(
-                      'Post',
-                      style: TextStyle(color: Colors.white),
+                Obx(
+                  () => Container(
+                    decoration: BoxDecoration(
+                      color:
+                          controller.canPost.value
+                              ? Colors.blue
+                              : const Color.fromARGB(255, 39, 39, 39),
+                      borderRadius: BorderRadius.circular(30),
+                    ),
+                    child: TextButton(
+                      onPressed:
+                          controller.canPost.value
+                              ? controller.postThread
+                              : null,
+                      child: Text(
+                        'Post',
+                        style: TextStyle(
+                          color:
+                              controller.canPost.value
+                                  ? Colors.white
+                                  : Colors.grey,
+                        ),
+                      ),
                     ),
                   ),
                 ),
