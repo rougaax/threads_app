@@ -1,14 +1,32 @@
 import 'package:get/get.dart';
 
 class AddThreadController extends GetxController {
-  var threadContent = "".obs;
-  var canPost = false.obs;
+  final threadContent = "".obs;
+  final canPost = false.obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    ever(threadContent, validatePost);
+  }
+
+  void validatePost(String content) {
+    canPost.value = content.trim().isNotEmpty;
+  }
+
+  void goBack() => Get.back();
 
   void postThread() {
     if (canPost.value) {
       // Simpan atau kirim data thread
-      Get.snackbar("Success", "Thread posted successfully!");
-      Get.back(); // Kembali ke halaman sebelumnya
+      Get.snackbar(
+        "Success",
+        "Thread posted successfully!",
+        snackPosition: SnackPosition.TOP,
+      );
+      goBack();
     }
   }
+
+  void updateContent(String content) => threadContent.value = content;
 }

@@ -22,9 +22,9 @@ class ForYouTab extends StatelessWidget {
                 "https://images.unsplash.com/photo-1690790412691-aa9714b39cbb?q=80&w=1974",
             icons: const [
               "assets/attach.svg",
-              "assets/location.svg",
+              "assets/camera.svg",
               "assets/gif.svg",
-              "assets/location.svg",
+              "assets/mic.svg",
               "assets/hashtag.svg",
               "assets/add_poll.svg",
               "assets/location.svg",

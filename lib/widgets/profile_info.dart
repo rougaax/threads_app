@@ -19,7 +19,7 @@ class ProfileInfo extends StatelessWidget {
                 children: [
                   const SizedBox(height: 24),
                   const Text(
-                    "VV",
+                    "hiyaa",
                     style: TextStyle(
                       color: Colors.white,
                       fontSize: 20,
@@ -27,7 +27,7 @@ class ProfileInfo extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "Izeasyy",
+                    "lorem_ipsum",
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                   const SizedBox(height: 4),
@@ -43,11 +43,8 @@ class ProfileInfo extends StatelessWidget {
                       ),
                       const SizedBox(width: 4),
                       const Text(
-                        "4 pengikut",
-                        style: TextStyle(
-                          color: Colors.grey,
-                          fontSize: 14,
-                        ),
+                        "4 Followers",
+                        style: TextStyle(color: Colors.grey, fontSize: 14),
                       ),
                     ],
                   ),
@@ -71,7 +68,7 @@ class ProfileInfo extends StatelessWidget {
                     foregroundColor: Colors.white,
                     side: const BorderSide(color: Colors.grey),
                   ),
-                  child: const Text("Edit profil"),
+                  child: const Text("Edit Profile"),
                 ),
               ),
               const SizedBox(width: 8),
@@ -82,7 +79,7 @@ class ProfileInfo extends StatelessWidget {
                     foregroundColor: Colors.white,
                     side: const BorderSide(color: Colors.grey),
                   ),
-                  child: const Text("Bagikan profil"),
+                  child: const Text("Share Profile"),
                 ),
               ),
             ],

@@ -58,16 +58,16 @@ class ProfileScreen extends StatelessWidget {
                   children: [
                     Column(
                       children: [
-                        _buildTabContent("Selesaikan profil Anda", "3 lagi"),
-                        _buildProfileCards(), // ✅ ProfileCard muncul di sini
+                        _buildTabContent("Complete your profile", "3 more"),
+                        _buildProfileCards(),
                       ],
                     ),
-                    _buildTabMessage("Anda belum memposting balasan apa pun"),
+                    _buildTabMessage("you haven't posted any replies yet"),
                     _buildTabMessage(
-                      "Anda belum memposting utas media apa pun",
+                      "you haven't posted any media threads yet",
                     ),
                     _buildTabMessage(
-                      "Anda belum memposting ulang utas apa pun",
+                      "you haven't repost any threads yet",
                     ),
                   ],
                 ),
@@ -87,10 +87,10 @@ class ProfileScreen extends StatelessWidget {
           Expanded(
             child: ProfileCard(
               icon: "assets/message.svg",
-              title: "Buat utas",
+              title: "Create thread",
               subtitle:
-                  "Sampaikan apa yang Anda pikirkan atau bagikan sorotan terbaru.",
-              buttonText: "Buat",
+                  "Say what's on your mind or share a recent highlight.",
+              buttonText: "Create",
               onPressed: () {},
             ),
           ),
@@ -98,9 +98,9 @@ class ProfileScreen extends StatelessWidget {
           Expanded(
             child: ProfileCard(
               icon: "assets/send.svg",
-              title: "Ikuti 10 profil",
-              subtitle: "Isi kabar Anda dengan utas yang Anda minati.",
-              buttonText: "Lihat profil",
+              title: "Follows 10 profiles",
+              subtitle: "Make it easier for people to recognize you.",
+              buttonText: "Look Profiles",
               onPressed: () {},
             ),
           ),
@@ -133,7 +133,7 @@ class ProfileScreen extends StatelessWidget {
 
   Widget _buildTabMessage(String message) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 50),
+      padding: const EdgeInsets.symmetric(vertical: 250),
       child: Center(
         child: Text(
           message,

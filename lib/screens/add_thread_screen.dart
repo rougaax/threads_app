@@ -15,15 +15,7 @@ class AddThreadScreen extends StatelessWidget {
       appBar: AppBar(
         leading: IconButton(
           icon: const Icon(Icons.close),
-          onPressed: () {
-            if (Navigator.of(context).canPop()) {
-              print("Navigator bisa pop, kembali ke halaman sebelumnya.");
-              Navigator.of(context).pop();
-            } else {
-              print("Navigator tidak bisa pop, coba Get.back().");
-              Get.back();
-            }
-          },
+          onPressed: controller.goBack,
         ),
         title: const Text('New thread'),
         actions: [
@@ -43,15 +35,15 @@ class AddThreadScreen extends StatelessWidget {
           ListView(
             children: [
               UserPostWidget(
-                username: "alvianrfs",
+                username: "loreen_ipsum",
                 placeholder: "What's new?",
                 profileImageUrl:
                     "https://images.unsplash.com/photo-1690790412691-aa9714b39cbb?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
                 icons: const [
                   "assets/attach.svg",
-                  "assets/location.svg",
+                  "assets/camera.svg",
                   "assets/gif.svg",
-                  "assets/location.svg",
+                  "assets/mic.svg",
                   "assets/hashtag.svg",
                   "assets/add_poll.svg",
                   "assets/location.svg",
@@ -76,8 +68,8 @@ class AddThreadScreen extends StatelessWidget {
                       color:
                           controller.canPost.value
                               ? Colors.blue
-                              : const Color.fromARGB(255, 39, 39, 39),
-                      borderRadius: BorderRadius.circular(30),
+                              : const Color.fromARGB(255, 70, 70, 70),
+                      borderRadius: BorderRadius.circular(20),
                     ),
                     child: TextButton(
                       onPressed:
@@ -90,7 +82,7 @@ class AddThreadScreen extends StatelessWidget {
                           color:
                               controller.canPost.value
                                   ? Colors.white
-                                  : Colors.grey,
+                                  : Colors.black,
                         ),
                       ),
                     ),

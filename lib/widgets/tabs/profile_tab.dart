@@ -3,7 +3,7 @@ import 'package:get/get.dart';
 import '../../controllers/profile_controller.dart';
 
 class ProfileTabBar extends StatelessWidget {
-  final List<String> tabs = ["Utas", "Balasan", "Media", "Postingan\nulang"];
+  final List<String> tabs = ["Threads", "Replies", "Media", "Repost"];
   final ProfileController controller = Get.find();
 
   @override
