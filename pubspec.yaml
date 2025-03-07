@@ -77,6 +77,7 @@ flutter:
     - assets/followers.svg
     - assets/camera.svg
     - assets/mic.svg
+    - assets/filter.svg
 
 
 
