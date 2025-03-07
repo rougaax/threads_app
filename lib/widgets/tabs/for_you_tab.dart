@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../controllers/thread_controller.dart';
 import '../thread_post_widget.dart';
 import '../user_post_widget.dart';
@@ -16,7 +15,7 @@ class ForYouTab extends StatelessWidget {
       () => ListView(
         children: [
           UserPostWidget(
-            username: "lorem_ipsum",
+            username: "alvianrfs",
             placeholder: "What's new?",
             profileImageUrl:
                 "https://images.unsplash.com/photo-1690790412691-aa9714b39cbb?q=80&w=1974",

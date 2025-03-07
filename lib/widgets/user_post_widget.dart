@@ -40,7 +40,7 @@ class UserPostWidget extends StatelessWidget {
               // Garis vertikal
               Container(
                 width: 2,
-                height: 50, // Sesuaikan tinggi garis
+                height: 20, // Sesuaikan tinggi garis
                 color: const Color.fromARGB(
                   255,
                   50,

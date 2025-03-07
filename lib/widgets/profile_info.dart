@@ -27,7 +27,7 @@ class ProfileInfo extends StatelessWidget {
                     ),
                   ),
                   const Text(
-                    "Izeasyy",
+                    "alvianrfs",
                     style: TextStyle(color: Colors.grey, fontSize: 16),
                   ),
                   const SizedBox(height: 4),

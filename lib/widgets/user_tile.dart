@@ -39,16 +39,16 @@ class UserTile extends StatelessWidget {
         user.followers,
         style: const TextStyle(color: Colors.grey),
       ),
-      trailing: ElevatedButton(
+            trailing: ElevatedButton(
         onPressed: () {},
         style: ElevatedButton.styleFrom(
-          backgroundColor: Colors.grey[800],
-          foregroundColor: Colors.white,
+          backgroundColor: const Color.fromARGB(255, 255, 255, 255),
+          foregroundColor: const Color.fromARGB(255, 0, 0, 0),
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(8),
           ),
         ),
-        child: const Text('Follow'),
+        child: Text('Ikuti'),
       ),
     );
   }

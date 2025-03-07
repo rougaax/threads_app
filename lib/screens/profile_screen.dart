@@ -16,9 +16,13 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         backgroundColor: Colors.black,
         leading: IconButton(
-          icon: const Icon(Icons.public, size: 32, color: Colors.white),
-          onPressed: () {},
-        ),
+            icon: SvgPicture.asset(
+              "assets/public.svg",
+              height: 32,
+              color: Colors.white,
+            ),
+            onPressed: () {},
+          ),
         actions: [
           IconButton(
             icon: SvgPicture.asset(
@@ -38,7 +42,7 @@ class ProfileScreen extends StatelessWidget {
           ),
           IconButton(
             icon: SvgPicture.asset(
-              "assets/add_poll.svg",
+              "assets/filter.svg",
               height: 32,
               color: Colors.white,
             ),
